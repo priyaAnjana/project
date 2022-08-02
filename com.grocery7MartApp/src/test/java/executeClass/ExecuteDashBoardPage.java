@@ -1,5 +1,7 @@
 package executeClass;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,13 +14,14 @@ public class ExecuteDashBoardPage extends BaseClass {
 	LoginPage lp;
 	
   @Test
-  public void dashBoardIsVisibleAfterSuccessfulLogin() 
+  public void dashBoardIsVisibleAfterSuccessfulLogin() throws IOException 
   {
 	 lp= new LoginPage(driver);
-	  lp.enterUserName("admin");
-	  lp.enterPassword("admin");
+	 db = new DashBoardPage(driver);
+	  lp.enterUserName(db.readUserName(0, 1));
+	  lp.enterPassword(db.readPassWord(1, 1));
 	  lp.clickOnLogin();
-	  db = new DashBoardPage(driver);
+	  
 	  String actualDashBoardText = "Dashboard";
 	  String expectedDashBoardText = db.getTextDashBoard();
 	  Assert.assertEquals(actualDashBoardText, expectedDashBoardText);

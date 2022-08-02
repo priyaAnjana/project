@@ -1,17 +1,21 @@
 package elementRepository;
 
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utility.ExcelReadClass;
 import utility.GeneralUtilities;
 
 public class DashBoardPage  {
 
 	WebDriver driver;
 	GeneralUtilities gl = new GeneralUtilities();
+	ExcelReadClass erc = new ExcelReadClass();
 
 	public DashBoardPage(WebDriver driver)
 	{
@@ -50,6 +54,16 @@ public class DashBoardPage  {
 	public String getListUsersText()
 	{
 		return gl.getTextMethod(listUsersText);
+	}
+	
+	public String readUserName(int r, int c) throws IOException
+	{
+		return erc.readStringData(r,c);
+	}
+	
+	public String readPassWord(int r,int c) throws IOException
+	{
+		return erc.readStringData(r, c);
 	}
 
 

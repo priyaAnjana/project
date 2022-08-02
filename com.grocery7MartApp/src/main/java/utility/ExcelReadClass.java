@@ -17,7 +17,7 @@ public class ExcelReadClass {
 	public static XSSFSheet s;
 	
 	public static String readStringData(int i,int j) throws IOException {
-		f = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\LoginDetails.xlsx");
+		f = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\ExcelLogin.xlsx");
 		b = new XSSFWorkbook(f);
 		s = b.getSheet("Sheet1");
 		Row r = s.getRow(i);
@@ -25,7 +25,7 @@ public class ExcelReadClass {
 		return c.getStringCellValue();
 	}	
 		public static String readIntegerData(int i,int j) throws IOException {
-			f = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\LoginDetails.xlsx");
+			f = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\ExcelLogin.xlsx");
 			b = new XSSFWorkbook(f);
 			s = b.getSheet("Sheet1");
 			Row r = s.getRow(i);
