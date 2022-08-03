@@ -50,25 +50,27 @@ public class ManageOrderPage {
 	{
 		gl.clickElement(searchButton);
 	}
+
 	public void typeOrderId(String id)
 	{
 		gl.TextType(orderId, id);
 	}
+
 	public void clickONewSeacrchButton()
 	{
 		gl.clickElement(newSearchButton);
 	}
 
-
-
 	public String getTextOfOrderIdsearchresult() 
 	{
 		return gl.getTextMethod(orderIdSearchresult);
 	}
+
 	public void clickOnViewButton()
 	{
 		gl.scriptExecutorToClick(driver, viewButton);
 	}
+
 	public void scrollIntoViewElement()
 	{
 		gl.scrollToFindAnElement(driver, viewButton);
@@ -78,11 +80,9 @@ public class ManageOrderPage {
 	{
 		return gl.isDisplayedMethod(orderDetailsText);
 	}
-	
+
 	public void elementTOBeClick()
 	{
 		ewc.waitElementToBEClickable(driver, viewButton);
 	}
-
-
 }

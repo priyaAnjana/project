@@ -21,13 +21,13 @@ public class ExecuteManageExpensePage extends BaseClass {
 		lp.clickOnLogin();
 
 		mep = new ManageExpensePage(driver);
-		
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		boolean expenseCatogoryText = mep.getTextExpenseCatogory();
 		Assert.assertTrue(expenseCatogoryText);
 
 	}
+
 	@Test(priority = 2)
 	public void verifyAdminCanCreateANewExpenseCategory()
 	{
@@ -35,17 +35,17 @@ public class ExecuteManageExpensePage extends BaseClass {
 		lp.enterUserName("admin");
 		lp.enterPassword("admin");
 		lp.clickOnLogin();
-		
+
 		mep = new ManageExpensePage(driver);
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		mep.clickOnNewButton();
 		mep.sendKeysTitle("Mobile Phone");
 		mep.clickOnSaveButton();
-		
+
 		boolean alertText = mep.isAlerttextDisplayed();
 		Assert.assertTrue(alertText);
-		
+
 	}
 	@Test(priority = 3)
 	public void verifyAdminCanSearchNewlyCreatedOne()
@@ -54,19 +54,19 @@ public class ExecuteManageExpensePage extends BaseClass {
 		lp.enterUserName("admin");
 		lp.enterPassword("admin");
 		lp.clickOnLogin();
-		
+
 		mep = new ManageExpensePage(driver);
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		mep.clickOnSearchButton();
 		mep.typeSearchTitle("Mobile Phone");
 		mep.clickOnNewSearchButton();
-		
+
 		String expectedText = "Mobile Phone";
 		String actualText = mep.getTextMobilePhone();
 		Assert.assertEquals(actualText,expectedText);
 	}
-	
+
 	@Test(priority = 4)
 	public void verifyAdminCanEditTheCreatedOnes()
 	{
@@ -74,7 +74,7 @@ public class ExecuteManageExpensePage extends BaseClass {
 		lp.enterUserName("admin");
 		lp.enterPassword("admin");
 		lp.clickOnLogin();
-		
+
 		mep =new ManageExpensePage(driver);
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
@@ -88,7 +88,7 @@ public class ExecuteManageExpensePage extends BaseClass {
 		boolean alertMsg = mep.isUpdateAlertMsgDisplayed();
 		Assert.assertTrue(alertMsg);
 	}
-	
+
 	@Test(priority = 5)
 	public void verifyAdminCanDeleteTheCreatedOne()
 	{
@@ -96,7 +96,7 @@ public class ExecuteManageExpensePage extends BaseClass {
 		lp.enterUserName("admin");
 		lp.enterPassword("admin");
 		lp.clickOnLogin();
-		
+
 		mep =new ManageExpensePage(driver);
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
@@ -105,9 +105,9 @@ public class ExecuteManageExpensePage extends BaseClass {
 		mep.clickOnNewSearchButton();
 		mep.clickOnDeleteButton();
 		mep.acceptAlertMsg();
-		
+
 		boolean deletAlertText = mep.isdeleteAlertMsgDisplayedOrNot();
 		Assert.assertTrue(deletAlertText);
 	}
-	
+
 }

@@ -20,9 +20,8 @@ public class ExecuteManageProductPage extends BaseClass {
 		lp.enterUserName(mpp.readUserName(0, 1));
 		lp.enterPassword(mpp.readPassWord(1, 1));
 		lp.clickOnLogin();
-
-
 		mpp.clickOnManageProduct();
+
 		boolean text = mpp.isListProductTextDisplay();
 		Assert.assertTrue(text);
 	}
@@ -44,23 +43,18 @@ public class ExecuteManageProductPage extends BaseClass {
 		mpp.dropdownSelectByIndexCategory();
 		mpp.waitSleep();
 		mpp.ClickOnSubCategory();
-
-
 		mpp.dropDownSelectByValueSubCategory();
-
 		mpp.clickOnPriceType();
-
 		mpp.dropDownSelectByIndexMinimumPiece();
-
 		mpp.typeMaximumQuantityCanOrder();
 		mpp.scrollToElement();
 		mpp.typePrice("200");
 		mpp.typeStockAvailability("10");
-
 		mpp.clickOnImage();
 		mpp.uploadImage();
 		mpp.presenceOfElementLocated();
 		mpp.clickOnSaveButton();
+
 		boolean alertText = mpp.isSuccessfulSavealertDisplayed();
 		Assert.assertTrue(alertText);
 	}
@@ -82,7 +76,6 @@ public class ExecuteManageProductPage extends BaseClass {
 
 		String expectedText = "Elite Cup Cake P848 Combo";
 		String actualText = mpp.getTextEliteCakeText();
-
 		Assert.assertEquals(actualText,expectedText);
 	}
 
@@ -105,8 +98,9 @@ public class ExecuteManageProductPage extends BaseClass {
 		boolean alertText = mpp.isDeleteAlmondAlertTextDisplayed();
 		Assert.assertTrue(alertText);
 	}
-	@Test
-	public void verifyThereSetButtonIsWorkingFineOrNot() throws IOException 
+
+	@Test(priority = 5)
+	public void verifyTheReSetButtonIsWorkingFineOrNot() throws IOException 
 	{
 		lp = new LoginPage(driver);
 		mpp = new ManageProductPage(driver);
@@ -118,11 +112,12 @@ public class ExecuteManageProductPage extends BaseClass {
 		mpp.typeProductCode("848");
 		mpp.clickOnNewSearchButton();
 		mpp.clickOnResetButton();
+
 		boolean text = mpp.isResetSearchListProduct();
 		Assert.assertFalse(text);
 
 	}
-	@Test
+	@Test(priority = 6)
 	public void verifyTheUserCanNavigateToTheLastPageByClickingOnLastButton() throws IOException, InterruptedException
 	{
 		lp = new LoginPage(driver);
@@ -135,6 +130,7 @@ public class ExecuteManageProductPage extends BaseClass {
 		mpp.waitSleep();
 		mpp.clickOnPaginationLastButton();
 		mpp.scrollToBeetRoort();
+
 		String expectedLastItem = "P4";
 		String actualLastItem =mpp.beetRootLastItemOfTable();
 		Assert.assertEquals(actualLastItem,expectedLastItem);

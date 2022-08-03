@@ -17,15 +17,15 @@ public class LoginPage {
 	@FindBy(name="password")
 	WebElement passWord;
 
-
 	@FindBy(xpath="//button[text()='Sign In']")
 	WebElement loginButton;
 
 	@FindBy(xpath="//label[@for='remember']")
 	WebElement rememberMeCheckBox;
-	
+
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	WebElement alertMsg;
+
 	@FindBy(xpath="(//a[@class='nav-link'])[2]")
 	WebElement actualUserName;
 
@@ -34,11 +34,12 @@ public class LoginPage {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
-//actionmethod
+
 	public void enterUserName(String uName)
 	{
 		gl.TextType(userName, uName);
 	}
+
 	public void enterPassword(String pass)
 	{
 		gl.TextType(passWord, pass);
@@ -48,27 +49,26 @@ public class LoginPage {
 	{
 		gl.clickElement(loginButton);
 	}
+
 	public boolean isrememberMeSelected()
 	{
 		return	gl.isSelectedMethod(rememberMeCheckBox);
-
-
 	}
+
 	public String getUrlOftheLogin()
 	{
 		return gl.getcurrentUrl(driver);
 	}
-	
+
 	public boolean isalertmsgDisplayed()
+
 	{
 		return gl.isDisplayedMethod(alertMsg);
 	}
+
 	public String getactualUser()
 	{
 		return gl.getTextMethod(actualUserName);
 	}
-	
-	
-
 
 }

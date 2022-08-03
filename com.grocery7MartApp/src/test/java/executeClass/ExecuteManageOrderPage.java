@@ -10,7 +10,8 @@ public class ExecuteManageOrderPage extends BaseClass {
 
 	LoginPage lp;
 	ManageOrderPage mop;
-	@Test
+
+	@Test(priority = 1)
 	public void  verifyTheAdminCanSearchAnOrderByUsingOrderId() 
 	{
 		lp = new LoginPage(driver);
@@ -27,8 +28,9 @@ public class ExecuteManageOrderPage extends BaseClass {
 		String actualResult = mop.getTextOfOrderIdsearchresult();
 		Assert.assertEquals(actualResult, expectedResult);
 	}
-	@Test
-	public void vrifyTheAdminCanViewTgeOrderDetailsOfSearchOrder()
+
+	@Test(priority = 2)
+	public void vrifyTheAdminCanViewTheOrderDetailsOfSearchOrder()
 	{
 		lp = new LoginPage(driver);
 		lp.enterUserName("admin");

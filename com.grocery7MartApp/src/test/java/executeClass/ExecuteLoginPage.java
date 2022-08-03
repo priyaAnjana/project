@@ -9,7 +9,7 @@ public class ExecuteLoginPage extends BaseClass {
 
 	LoginPage lp;
 
-	@Test
+	@Test(priority = 1)
 	public void verifyLoginPageIsvisibleWhileLaunchingTheApplication()
 	{
 		lp = new LoginPage(driver);
@@ -20,7 +20,7 @@ public class ExecuteLoginPage extends BaseClass {
 	}
 
 
-	@Test(dataProvider = "DataProvider1",dataProviderClass = DataProviderClass.class)
+	@Test(priority =3 ,dataProvider = "DataProvider1",dataProviderClass = DataProviderClass.class)
 	public void verifysuccessfulLogin(String name, String pass)
 	{
 		lp = new LoginPage(driver);
@@ -32,7 +32,7 @@ public class ExecuteLoginPage extends BaseClass {
 		Assert.assertEquals(expectedUserName,actualUserName);
 	}
 
-	@Test
+	@Test(priority =2)
 	public void isrememberMeCheckBoxSelectedOrNot()
 	{
 		lp = new LoginPage(driver);
@@ -42,7 +42,7 @@ public class ExecuteLoginPage extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "DataProvider",dataProviderClass = DataProviderClass.class)
+	@Test(priority =4, dataProvider = "DataProvider",dataProviderClass = DataProviderClass.class)
 	public void verifyUnsuccessfulLogin(String name, String pass)
 	{
 		lp = new LoginPage(driver);

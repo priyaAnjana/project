@@ -29,14 +29,15 @@ public class ExplicitWaitClass
 		w=new WebDriverWait(driver, Duration.ofSeconds(10));
 		w.until(ExpectedConditions.alertIsPresent());
 	}
+
 	public void waitElementToBEClickable(WebDriver driver,WebElement element)
 	{
 		w= new WebDriverWait(driver,Duration.ofSeconds(10));
 		w.until(ExpectedConditions.elementToBeClickable(element));
-		
-		
+
+
 	}
-	
+
 	public void waitElementToBeSelected(WebDriver driver,WebElement element)
 	{
 		w= new WebDriverWait(driver,Duration.ofSeconds(10));
