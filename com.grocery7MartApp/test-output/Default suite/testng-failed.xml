@@ -5,9 +5,13 @@
     <classes>
       <class name="executeClass.ExecuteManageExpensePage">
         <methods>
+          <include name="verifyExpenseCategoryIsVisibleWhileClickingOnExpenseCategoryUnderManageExpense"/>
           <include name="verifyAdminCanSearchNewlyCreatedOne"/>
+          <include name="verifyAdminCanCreateANewExpenseCategory"/>
           <include name="afterMethod"/>
+          <include name="verifyAdminCanDeleteTheCreatedOne"/>
           <include name="beforeMethod"/>
+          <include name="verifyAdminCanEditTheCreatedOnes"/>
         </methods>
       </class> <!-- executeClass.ExecuteManageExpensePage -->
     </classes>

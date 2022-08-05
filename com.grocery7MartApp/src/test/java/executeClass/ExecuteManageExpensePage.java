@@ -40,7 +40,7 @@ public class ExecuteManageExpensePage extends BaseClass {
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		mep.clickOnNewButton();
-		mep.sendKeysTitle("Mobile Phone");
+		mep.sendKeysTitle(" Phone");
 		mep.clickOnSaveButton();
 
 		boolean alertText = mep.isAlerttextDisplayed();
@@ -59,10 +59,10 @@ public class ExecuteManageExpensePage extends BaseClass {
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		mep.clickOnSearchButton();
-		mep.typeSearchTitle("Mobile Phone");
+		mep.typeSearchTitle(" Phone");
 		mep.clickOnNewSearchButton();
 
-		String expectedText = "Mobile Phone";
+		String expectedText = " Phone";
 		String actualText = mep.getTextMobilePhone();
 		Assert.assertEquals(actualText,expectedText);
 	}
@@ -79,11 +79,11 @@ public class ExecuteManageExpensePage extends BaseClass {
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		mep.clickOnSearchButton();
-		mep.typeSearchTitle("Mobile Phone");
+		mep.typeSearchTitle(" Phone");
 		mep.clickOnNewSearchButton();
 		mep.ClickOnEditIcon();
 		mep.clearEdittitle();
-		mep.editTitle("Max Mobile Phone");
+		mep.editTitle(" Mobile Phone");
 		mep.clickOnUpdateButton();
 		boolean alertMsg = mep.isUpdateAlertMsgDisplayed();
 		Assert.assertTrue(alertMsg);
@@ -101,7 +101,7 @@ public class ExecuteManageExpensePage extends BaseClass {
 		mep.clickOnManageExpense();
 		mep.clickOnExpenseCategory();
 		mep.clickOnSearchButton();
-		mep.typeSearchTitle("Max Mobile Phone");
+		mep.typeSearchTitle(" Mobile Phone");
 		mep.clickOnNewSearchButton();
 		mep.clickOnDeleteButton();
 		mep.acceptAlertMsg();

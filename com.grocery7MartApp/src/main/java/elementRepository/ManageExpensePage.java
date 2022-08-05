@@ -48,7 +48,7 @@ public class ManageExpensePage {
 	@FindBy(xpath = "(//button[@class='btn btn-block-sm btn-danger'])[1]")
 	WebElement newSearchButton;
 
-	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']//td[1]")
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']//tr[1]//td[1]")
 	WebElement searchMobilePhone;
 
 	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-primary btncss']")
