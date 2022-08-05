@@ -3,17 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="executeClass.ExecuteManageExpensePage">
+      <class name="executeClass.ExecuteManageUsersPage">
         <methods>
-          <include name="verifyExpenseCategoryIsVisibleWhileClickingOnExpenseCategoryUnderManageExpense"/>
-          <include name="verifyAdminCanSearchNewlyCreatedOne"/>
-          <include name="verifyAdminCanCreateANewExpenseCategory"/>
+          <include name="verifyTheAdminCanChangeTheStatusOfSoftWareTesterUser"/>
           <include name="afterMethod"/>
-          <include name="verifyAdminCanDeleteTheCreatedOne"/>
           <include name="beforeMethod"/>
-          <include name="verifyAdminCanEditTheCreatedOnes"/>
         </methods>
-      </class> <!-- executeClass.ExecuteManageExpensePage -->
+      </class> <!-- executeClass.ExecuteManageUsersPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

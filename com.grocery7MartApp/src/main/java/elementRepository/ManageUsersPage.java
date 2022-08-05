@@ -52,10 +52,10 @@ public class ManageUsersPage {
 	@FindBy(xpath = "//input[@id='ut']")
 	WebElement emailId;
 
-	@FindBy(xpath = "(//i[@class='fa fa-unlock'])[8]")
+	@FindBy(xpath = "(//a[@class='btn btn-sm btn-danger btn-rounded'])[2]")
 	WebElement status;
 
-	@FindBy(xpath = "(//a[@class='page-link'])[2]")
+	@FindBy(xpath = "(//li[@class='page-item'])[1]")
 	WebElement paginationTwo;
 
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")

@@ -27,7 +27,7 @@ public class ManageExpensePage {
 	@FindBy(xpath = "//h1[text()='Expense Category']")
 	WebElement expenseCategorytext;
 
-	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
+	@FindBy(xpath = "//*[text()=' New']")
 	WebElement newButton;
 
 	@FindBy(id = "name")
